@@ -1,0 +1,190 @@
+/* HEADER */
+
+.header {
+    height: 450px;
+    width: 100%;
+    background: rgb(4, 20, 94);
+    position: relative;
+}
+
+.header__texture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;left: 0;
+    background: url(../img/header.jpg) center no-repeat;
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../img/wave.png);
+    background-size: 1000px 100px;
+}
+
+.wave.wave1 {
+    animation: animate3 30s linear infinite;
+    z-index: 900;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+.wave.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 899;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+.wave.wave3 {
+    animation: animate2 30s linear infinite;
+    z-index: 898;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15;
+}
+
+.wave.wave4 {
+    animation: animate2 5s linear infinite;
+    z-index: 897;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+@keyframes animate3 {
+    0%
+    {
+        background-position-x: 0;
+
+    }
+    100%
+    {
+        background-position-x: 1000px;
+        
+    }
+}
+
+@keyframes animate2 {
+    0%
+    {
+        background-position-x: 0;
+
+    }
+    100%
+    {
+        background-position-x: -1000px;
+        
+    }
+}
+
+.header__navbar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header__navbar--menu-link {
+    margin-left: 40px;
+    color: white;
+    text-decoration: none;
+}
+
+.header__navbar--menu-link:hover {
+    color: #fff;
+}
+
+.header__slogan {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.h__slogan--title {
+    color: white;
+    font-size: 83px;
+    text-transform: uppercase;
+    font-family: 'Anton';
+    font-style: italic;
+    letter-spacing: 4px;
+}
+
+.h__slogan--btn {
+    font-size: 25px;
+    color: white;
+    border-bottom: 3px solid #f39c12;
+    display: inline;
+    z-index: 1000;
+}
+
+.header__navbar--toggle {
+    width: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    display: none;
+    cursor: pointer;
+}
+
+.header__navbar--toggle-icons, .header__navbar--toggle-icons:before, .header__navbar--toggle-icons:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    background: white;
+    position: relative;
+}
+
+.header__navbar--toggle-icons:before {top: 10px;}
+.header__navbar--toggle-icons:after {top: -14px;}
+
+.is-open .header__navbar--menu {
+    transform: translateY(0);
+
+}
+
+@media only screen and (max-width: 670px){
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .header__navbar--toggle {
+        display: flex;
+        z-index: 1000;
+    }
+    .header__navbar--menu {
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100vw;
+        height: 50vh;
+        background: #f39c12;
+        top: 0;left: 0;
+    }
+    .header__navbar--menu-link {
+        margin: 20px 0;
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 972px) {
+    .h__slogan--title {
+        font-size: 48px;
+    }
+}

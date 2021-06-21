@@ -1,0 +1,135 @@
+/* PARTIE HAUTE */
+
+.main-content-top {
+    color: #fff;
+    padding: 25px;
+    position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-content-top img {
+        display: none;
+    }
+}
+
+/* PARTIE BASSE */
+
+.container-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    flex-wrap: wrap;
+    background: #1e1e1f;
+
+}
+
+.container-card .box {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    color: white;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
+    transition: 0.5s;
+}
+
+.container-card .box:hover {
+    transform: translateY(-20px);
+}
+
+.container-card .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f37712, #ffbb00);
+}
+
+.container-card .box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffbb00, #f37712);
+    filter: blur(30px);
+}
+
+.container-card .box:nth-child(2)::before,
+.container-card .box:nth-child(2)::after {
+    background: linear-gradient(315deg, #f37712, #ffbb00);
+}
+
+.container-card .box:nth-child(3)::before,
+.container-card .box:nth-child(3)::after {
+    background: linear-gradient(315deg, #ffbb00, #f37712);
+}
+
+.container-card .box span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.container-card .box span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.container-card .box .content {
+    position: relative;
+    z-index: 10;
+    padding: 20px 40px;
+}
+
+.container-card .box .content h2 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.container-card .box .content p {
+    font-size: 1.1em;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+}
+
+.container-card .box .content a {
+    display: inline-block;
+    font-size: 1.1em;
+    color: black;
+    background: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.questions__title {
+    font-size: 23px;
+    padding: 10px;
+}
+
+.img_pc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

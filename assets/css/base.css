@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+    background-color: #2c2d2e;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    z-index: 999;
+}
